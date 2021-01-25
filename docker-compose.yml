@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    php:
+        image: php:7.4-apache
+        ports:
+          - 8080:80
+        volumes:
+          #- ./.docker/apache2/webroot:/var/www 
+          #- ./.docker/php/etc:/usr/local/etc/php
+          #- ./.docker/apache2/sites-enabled:/etc/apache2/sites-enabled
+          #- ./.docker/php/etc:/usr/local/etc/php
+          - ./.docker/apache2/custom.d:/etc/apache2/custom.d
+          - ./.docker/apache2/apache2.conf:/etc/apache2/apache2.conf
+volumes:
+  persistent:
+
+# do prikazove radky napiste:
+# docker-compose up -d
+# docker-compose down
